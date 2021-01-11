@@ -6,20 +6,30 @@ import Match from '../../Components/Match/Match'
 
 const Feed = () => {
 
-    // const [matchData, setMatchData] = useState([])
+    const [matchData, setMatchData] = useState()
 
+    useEffect(() => {
         const getUserMatches = async () => {
-            console.log('function start')
+
             const matchRes = await Axios.get('http://localhost:5000/match')
-                return <Text>{matchRes.data}</Text>
-            // const matches = matchRes.data
-            // setMatchData(match => [...matchData, matches])
+                // console.log(matchRes.data)
+                setMatchData(matchRes.data)
+            
         }
         getUserMatches()
-    
+    }, [])
+        
     return (
         <View style={styles.container}>
-           <Match />
+            <View style={styles.containerTitle}>
+                <Text style={styles.title}>Recent Matches:</Text>
+            </View>
+           <FlatList 
+                data={matchData}
+                renderItem={({item}) => <Match data={item} />}
+                showsVerticalScrollIndicator={false}
+                style={styles.list}
+           />
         </View>
     )
 }

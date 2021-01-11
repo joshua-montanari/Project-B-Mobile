@@ -28,22 +28,22 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         flexDirection: 'row',
         backgroundColor: '#181a18',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     winner: {
         fontWeight: '500',
         color: 'green',
-        fontSize: 'larger'
+        fontSize: 15
     },
     loser: {
         fontWeight: '500',
         color: 'red',
-        fontSize: 'larger'
+        fontSize: 15
     },
     score: {
         fontWeight: '500',
         color: 'white',
-        fontSize: 'larger'
+        fontSize: 15
     }
 })
 
