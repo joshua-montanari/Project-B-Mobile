@@ -28,10 +28,10 @@ function Appbar() {
         }}
       />
       <Tab.Screen
-        name="Notifications"
+        name="Add"
         component={Add}
         options={{
-          tabBarLabel: 'Updates',
+          tabBarLabel: 'Add Match',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="bell" color={color} size={26} />
           ),
